@@ -39,12 +39,12 @@ class StarSystem:
 
         # Renderer:
         if render_type == RenderType.PLOT_2D:
-            self.render = Render2D(star_system_name)
+            self.render = Render2D(star_system_name, self.star)
 
     def add_planet(self, planet=SpaceObject('Planet', 10 ** 6, State(), '#ffffff')):
         self.planets.append(planet)
 
-    def simulate(self, number_of_days):
+    def simulate(self, initial_day, number_of_days):
         dt = 1.0    # [day]
         for ii in range(0, number_of_days):
             tmp_states = []
@@ -56,7 +56,7 @@ class StarSystem:
             # Computing new state:
             for actual_planet in self.planets:
                 # Computing overall acceleration:
-                actual_planet.actual_state.acc = G_AU * self.star.mass * actual_planet.actual_state.pos / (
+                actual_planet.actual_state.acc = - G_AU * self.star.mass * actual_planet.actual_state.pos / (
                     np.linalg.norm(actual_planet.actual_state.pos) ** 3)
                 for other_planet in self.planets:
                     if other_planet.name != actual_planet.name:
@@ -77,4 +77,4 @@ class StarSystem:
             # Saving states timestamp:
             self.states.append(tmp_states[:])
 
-        self.render.display(self.star, self.planets, self.states)
+        self.render.display(self.star, self.planets, self.states, initial_day, number_of_days)
