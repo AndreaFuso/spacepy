@@ -37,6 +37,6 @@ solar_system.add_planet(mars)
 solar_system.add_planet(jupiter)
 
 # Simulating the system:
-solar_system.simulate()
+solar_system.simulate(number_of_days=365)
 
 

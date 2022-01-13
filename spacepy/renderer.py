@@ -11,14 +11,14 @@ class Render2D:
         self.axes.set_aspect('equal')
         self.axes.axis('off')
 
-    def display(self, star, planets):
+    def display(self, star, planets, states_time_stamps):
         # Display the star:
         star_circle = plt.Circle((star.actual_state.pos[0], star.actual_state.pos[1]), 0.1, color=star.color)
         self.axes.add_patch(star_circle)
-
         # Displaying planets:
-        for planet in planets:
-            self.axes.add_patch(plt.Circle((planet.actual_state.pos[0], planet.actual_state.pos[1]), 0.05,
-                                           color=planet.color))
+        for ii in range(0, len(states_time_stamps[0])):
+            self.axes.add_patch(plt.Circle((states_time_stamps[0][ii].pos[0],
+                                            states_time_stamps[0][ii].pos[1]),
+                                           0.05, color=planets[ii].color))
         plt.show()
 
