@@ -9,7 +9,7 @@ G = 6.674e-11       # [m^3 * kg^-1 * s^-2]
 G_AU = G * (86400 ** 2) / (AU_TO_METERS ** 3)
 
 # Space color:
-SPACE_COLOR = '#1D3557'
+SPACE_COLOR = '#3D405B'  # '#1D3557'
 # ======================================================================================================================
 #                                                 S T A R S
 # ======================================================================================================================
@@ -49,11 +49,14 @@ JUPITER_COLOR = '#F77F00'
 # Saturn:
 SATURN_MASS = 568e24        # [kg]
 SATURN_DIAMETER = 120536    # [km]
+SATURN_COLOR = '#F2CC8F'
 
 # Uranus:
 URANUS_MASS = 86.8e24       # [kg]
 URANUS_DIAMETER = 51118     # [km]
+URANUS_COLOR = '#BDE0FE'
 
 # Neptune:
 NEPTUNE_MASS = 102e24       # [kg]
 NEPTUNE_DIAMETER = 49528    # [km]
+NEPTUNE_COLOR = '#A2D2FF'

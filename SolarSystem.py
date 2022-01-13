@@ -22,11 +22,16 @@ def spaceobj_from_horizons(date, ID, name, mass, color):
 
 
 # Planets definitions:
-mercury = spaceobj_from_horizons("2022-01-12", 1, 'Mercury', MERCURY_MASS, MERCURY_COLOR)
-venus = spaceobj_from_horizons("2022-01-12", 2, 'Venus', VENUS_MASS, VENUS_COLOR)
-earth = spaceobj_from_horizons("2022-01-12", 3, 'Earth', EARTH_MASS, EARTH_COLOR)
-mars = spaceobj_from_horizons("2022-01-12", 4, 'Mars', MARS_MASS, MARS_COLOR)
-jupiter = spaceobj_from_horizons("2022-01-12", 5, 'Jupiter', JUPITER_MASS, JUPITER_COLOR)
+mercury = spaceobj_from_horizons("2022-01-12", 199, 'Mercury', MERCURY_MASS, MERCURY_COLOR)
+venus = spaceobj_from_horizons("2022-01-12", 299, 'Venus', VENUS_MASS, VENUS_COLOR)
+earth = spaceobj_from_horizons("2022-01-12", 399, 'Earth', EARTH_MASS, EARTH_COLOR)
+mars = spaceobj_from_horizons("2022-01-12", 499, 'Mars', MARS_MASS, MARS_COLOR)
+jupiter = spaceobj_from_horizons("2022-01-12", 599, 'Jupiter', JUPITER_MASS, JUPITER_COLOR)
+saturn = spaceobj_from_horizons("2022-01-12", 699, 'Saturn', SATURN_MASS, SATURN_COLOR)
+uranus = spaceobj_from_horizons("2022-01-12", 799, 'Uranus', URANUS_MASS, URANUS_COLOR)
+neptune = spaceobj_from_horizons("2022-01-12", 899, 'Neptune', NEPTUNE_MASS, NEPTUNE_COLOR)
+
+pc1 = spaceobj_from_horizons("2022-01-12", '1994 PC1', '1994 PC1', NEPTUNE_MASS, NEPTUNE_COLOR)
 
 # Solar system definition:
 solar_system = StarSystem('Solar System', 'Sun', SUN_MASS, SUN_COLOR)
@@ -35,6 +40,9 @@ solar_system.add_planet(venus)
 solar_system.add_planet(earth)
 solar_system.add_planet(mars)
 solar_system.add_planet(jupiter)
+solar_system.add_planet(saturn)
+solar_system.add_planet(uranus)
+solar_system.add_planet(neptune)
 
 # Simulating the system:
 solar_system.simulate(initial_day='2022-01-12', number_of_days=365)

@@ -52,7 +52,7 @@ class StarSystem:
             # Update position of all planets:
             for actual_planet in self.planets:
                 actual_planet.actual_state.pos = actual_planet.prev_state.pos + actual_planet.prev_state.vel * dt
-                print(f'Day: {ii}, Planet: {actual_planet.name}, PrevX = {actual_planet.prev_state.pos[0]}, ActualX = {actual_planet.actual_state.pos[0]}')
+                #print(f'Day: {ii}, Planet: {actual_planet.name}, PrevX = {actual_planet.prev_state.pos[0]}, ActualX = {actual_planet.actual_state.pos[0]}')
             # Computing new state:
             for actual_planet in self.planets:
                 # Computing overall acceleration:
